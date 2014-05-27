@@ -3,7 +3,8 @@ LOCAL_PATH := $(call my-dir)
 #original path: src/libneon.la
 include $(CLEAR_VARS)
 
-LOCAL_CFLAGS:= -DHAVE_CONFIG_H -DNE_PRIVATE=extern -ffunction-sections -fdata-sections
+LOCAL_CFLAGS:= -DHAVE_CONFIG_H -DNE_PRIVATE=extern -ffunction-sections \
+	-fdata-sections -DOPENSSL_NO_DEPRECATED
 
 LOCAL_C_INCLUDES:= \
 	external/openssl/include\
@@ -35,6 +36,12 @@ LOCAL_SRC_FILES:= \
 	src/ne_oldacl.c\
 	src/ne_acl3744.c\
 	src/ne_openssl.c
+LOCAL_SHARED_LIBRARIES:= \
+	libcrypto\
+	libssl\
+	libexpat\
+	z
+	
 LOCAL_MODULE := libneon
 
 include $(BUILD_STATIC_LIBRARY)
