@@ -37,10 +37,11 @@ LOCAL_SRC_FILES:= \
 	src/ne_acl3744.c\
 	src/ne_openssl.c
 LOCAL_SHARED_LIBRARIES:= \
-	libcrypto\
-	libssl\
 	libexpat\
 	z
+LOCAL_STATIC_LIBRARIES:= \
+	libcrypto_static\
+	libssl
 	
 LOCAL_MODULE := libneon
 
