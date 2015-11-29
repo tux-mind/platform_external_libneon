@@ -40,8 +40,8 @@ LOCAL_SHARED_LIBRARIES:= \
 	libexpat\
 	z
 LOCAL_STATIC_LIBRARIES:= \
-	libcrypto_static\
-	libssl
+	libssl_static\
+	libcrypto_static
 	
 LOCAL_MODULE := libneon
 
